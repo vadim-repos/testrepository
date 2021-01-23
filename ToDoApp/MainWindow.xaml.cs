@@ -53,5 +53,17 @@ namespace ToDoApp
                 }                
             }
         }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            for (int i = 0; i < _toDoData.Count;)
+            {
+                if (_toDoData[i].IsSelected)
+                {
+                    _toDoData.RemoveAt(i);
+                }
+                else i++;
+            }
+        }
     }
 }

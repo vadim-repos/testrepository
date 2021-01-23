@@ -6,13 +6,17 @@
         xmlns:local="clr-namespace:ToDoApp"
         mc:Ignorable="d"
         Title="ToDoApp" Height="450" Width="800" Loaded="Window_Loaded">
+
     <Grid>
-        <DataGrid x:Name="dgToDoList" FontSize="14" Margin="10" AutoGenerateColumns="False">
+        <DataGrid x:Name="dgToDoList" FontSize="14" Margin="10,30,10,10" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=CreationDate}" IsReadOnly="True" Header="CreationDate" Width="180"/>
-                <DataGridCheckBoxColumn Binding="{Binding Path=IsDone, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="False" Header="Done" Width="80"/>
+                <DataGridCheckBoxColumn Binding="{Binding Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="False" Header="Selected" Width="80"/>
                 <DataGridTextColumn Binding="{Binding Path=Text}" IsReadOnly="False" Header="ToDo" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Button x:Name = "deleteButton" Content = "Delete"
+         HorizontalAlignment = "Left" Margin = "10,5"
+         VerticalAlignment = "Top" Width = "75" Click="DeleteButton_Click"/>
     </Grid>
 </Window>

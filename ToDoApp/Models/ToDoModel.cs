@@ -6,22 +6,22 @@ namespace ToDoApp.Models
 {
     public class ToDoModel : INotifyPropertyChanged
     {
-        private bool _isDone;
+        private bool _isSelected;
         private string _text;
         public event PropertyChangedEventHandler PropertyChanged;
 
         [JsonProperty(PropertyName = "creationDate")]
         public DateTime CreationDate { get; set; } = DateTime.Now;
 
-        [JsonProperty(PropertyName = "isDone")]
-        public bool IsDone
+        [JsonProperty(PropertyName = "isSelected")]
+        public bool IsSelected
         {
-            get { return _isDone; }
+            get { return _isSelected; }
             set
             {
-                if (_isDone == value) return;
-                _isDone = value;
-                OnPropertyChanged("IsDone");
+                if (_isSelected == value) return;
+                _isSelected = value;
+                OnPropertyChanged("IsSelected");
             }
         }
 
